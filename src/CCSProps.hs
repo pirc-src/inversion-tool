@@ -231,7 +231,7 @@ isWeaknonerasing (Ccs {idlist = Var vars,
                        funlist = sigs,
                        rulelist = Rules ((Arrow lterm rterm 
                                          ((CArrow lcond rcond):conds)):rules)}) =
-  (isSubset (var [rcond]) (var ([rterm]++[lcond]++(getleftterms conds))))
+  (isSubset (var [rcond]) (var ([rterm]++(getleftterms conds))))
   && isWeaknonerasing (Ccs {idlist = Var vars,
                             funlist = sigs,
                             rulelist = Rules ((Arrow lterm rterm
